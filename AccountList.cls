@@ -4,5 +4,6 @@ public class AccountList {
          return [SELECT Id, Subject, What.Type,  
                 StartDateTime,EndDateTime,
                 Location,  whatId FROM Event limit 1000];
+                
          }
    }
