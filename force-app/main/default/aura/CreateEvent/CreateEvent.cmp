@@ -1,0 +1,26 @@
+<aura:component controller="CreateEventController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:attribute name="Event" type="Event__c" default="{'sobjectType': 'Event__c',
+                         'Start_Date__c	': '',
+                         'Start_Time__c': '',
+                         'Location__c': '', 
+                         'End_Time__c': '',
+                          'End_Date__c': '' ,
+                    'Total_Number_of_Tickets__c': '','Subject__c': '' }"/>  
+   
+ <lightning:input name="input1" value="{!v.Event.Name}" label="Name of Event" />
+       <lightning:input type="date" name="input1"  value="{!v.Event.Start_Date__c}" label="Start Date"/>
+      <lightning:input type="date" name="input1"  label="End Date" value="{!v.Event.End_Date__c}"/>
+     <lightning:input type="time" label="Start Time" name="input1" value="{!v.Event.Start_Time__c}"/>
+      <lightning:input type="time" label="End Time" name="input1" value="{!v.Event.End_Time__c}"/>
+      <lightning:input type="number" label="Total Tickets" name="input1" value="{!v.Event.Total_Number_of_Tickets__c}"/>
+      <lightning:input name="input1" label="Subject" value="{!v.Event.Subject__c}"/>
+      <lightning:input name="input1" label="Location" value="{!v.Event.Location__c}"/>
+  
+    
+    <br/> 
+    <div align="right">
+   
+    <lightning:button variant="brand" label="Book" title="Book" onclick="{! c.handleClick }"/>
+      
+    </div> 
+</aura:component>

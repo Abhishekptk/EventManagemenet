@@ -1,0 +1,18 @@
+<aura:component controller="DisplayTickets" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="EvntList" type="Event[]" description="List of Event with respective Tickets"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <ul>
+        View Attandee for Each Event
+        <aura:iteration items="{!v.EvntList}" var="acc">
+        <b>   <li type="dice"> &nbsp; Event Name : {!acc.Name}</li></b> 
+            <ul>
+                <aura:iteration items="{!acc.Tickets__r}" var="Tic" indexVar="index">
+                    <br/>
+                    <li> &nbsp; Attandee Name : {!Tic.Name} &nbsp; </li>
+                </aura:iteration>
+            </ul>
+            <hr/>
+        </aura:iteration>
+    </ul>
+</aura:component>

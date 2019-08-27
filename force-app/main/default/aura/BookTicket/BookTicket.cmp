@@ -1,0 +1,44 @@
+<aura:component controller="BookTicketController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:attribute name="Ticket" type="Ticket__c" default="{'sobjectType': 'Ticket__c',
+                         'Number_of_Tickets__c	': '',
+                         'Name': '',
+                         'Age__c': '', 
+                         'Company__c': '',
+                          'Address__c': '' }"/>  
+   
+<div class="container-fluid">
+        <h3>Please Enter The Attendee Information</h3>
+    <br/>    <br/>    
+    
+    <div class="form-group">
+            <label> Name of Attendee</label>
+            <ui:inputText class="form-control" value="{!v.Ticket.Name}"/>
+        </div>
+     <br/> 
+        <div class="form-group">
+            <label>Age</label>
+            <ui:inputText class="form-control" value="{!v.Ticket.Age__c}"/>
+        </div>
+     <br/> 
+        <div class="form-group">
+            <label>Company</label>
+            <ui:inputText class="form-control" value="{!v.Ticket.Company__c}"/>
+        </div>
+     <br/> 
+        <div class="form-group">
+            <label>Address</label>
+            <ui:inputText class="form-control" value="{!v.Ticket.Address__c}"/>
+        </div>
+     <br/> 
+    </div>
+       
+   Please Note : Only One Member is allowed on 1 Ticket.
+    
+     <br/> 
+    <div align="right">
+   
+    <lightning:button variant="brand" label="Book" title="Book" onclick="{! c.handleClick }"/>
+     <lightning:button  variant="destructive" label="Close" title="Close" onclick="{! c.cancelBtn }"/>
+  
+    </div> 
+</aura:component>

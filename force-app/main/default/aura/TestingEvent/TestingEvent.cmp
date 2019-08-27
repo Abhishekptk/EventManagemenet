@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                   access="global"
+       controller="AccountListCon">
+    <aura:attribute type="Account[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAccounts}"/>
+    <br/><br/>
+    <center>EVENTS </center>
+    <br/><br/>
+    <lightning:datatable data="{! v.acctList }" 
+                         columns="{! v.mycolumns }" 
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+</aura:component>
